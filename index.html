@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC 311 Noise Complaints - Bushwick</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NYC 311 Noise Complaints - Bushwick</h1>
+            <p>Search for noise complaints in the Bushwick neighborhood by date range</p>
+        </header>
+        
+        <main>
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" required>
+                </div>
+                
+                <button type="submit" id="searchButton">Search Complaints</button>
+            </form>
+            
+            <div id="loading" class="loading" style="display: none;">
+                <p>Loading data...</p>
+            </div>
+            
+            <div id="error" class="error" style="display: none;"></div>
+            
+            <div id="results" class="results" style="display: none;">
+                <h2>Results</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>Total Complaints</h3>
+                        <p id="totalCount" class="stat-number">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Date Range</h3>
+                        <p id="dateRange" class="stat-text"></p>
+                    </div>
+                </div>
+                
+                <div class="complaints-list">
+                    <h3>Recent Complaints</h3>
+                    <div id="complaintsList"></div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Data provided by <a href="https://data.cityofnewyork.us/" target="_blank">NYC Open Data</a></p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
